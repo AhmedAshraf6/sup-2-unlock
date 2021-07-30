@@ -1,0 +1,28 @@
+// Function To Scroll Any Section 
+let allLinks = document.querySelectorAll('.links li a'),
+    ScrollDown =document.querySelector('.landing-page .container-social .scroll-down');
+
+function scrollSmooth(elements,element){
+    
+    elements.forEach(ele=>{
+        
+        ele.addEventListener('click',(e)=>{
+            
+           e.preventDefault();
+           document.querySelector(e.target.dataset.section).scrollIntoView({
+               
+              behavior:'smooth'
+           });    
+        });
+    });
+    element.addEventListener('click',(b)=>{
+        
+       b.preventDefault();
+       document.querySelector(b.target.dataset.section).scrollIntoView({
+               
+              behavior:'smooth'
+      });  
+        
+    });
+}
+scrollSmooth(allLinks,ScrollDown);
